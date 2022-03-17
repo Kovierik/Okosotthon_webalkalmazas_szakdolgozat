@@ -1,0 +1,227 @@
+$closed-sidebar: 110px;
+$opened-sidebar: 280px;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+}
+.home-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+
+  .navigation-bar {
+    z-index: 300;
+    background: rgba(52, 160, 164, 0.8);
+    position: absolute;
+    top: 80px;
+    left: 5px;
+    bottom: 15px;
+    width: 100px;
+    border-radius: 15px;
+    transition: width 0.5s;
+    overflow-x: hidden;
+    flex-grow: 1;
+
+    &.active {
+      width: 270px;
+    }
+
+    ul {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding-left: 20px;
+      padding-top: 70px;
+
+      li {
+        list-style: none;
+        position: relative;
+        color: #fff;
+        display: flex;
+        cursor: pointer;
+
+        &.active {
+          background: #fff;
+          border-radius: 15px 0 0 15px;
+
+          b:nth-child(1),
+          b:nth-child(2) {
+            display: block;
+          }
+
+          i,
+          span {
+            color: rgba(52, 160, 164, 0.8);
+          }
+        }
+
+        span {
+          cursor: pointer;
+        }
+
+        b {
+          &:nth-child(1) {
+            position: absolute;
+            top: -20px;
+            right: 0;
+            height: 20px;
+            width: 10%;
+            background: #fff;
+            display: none;
+
+            &:before {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0;
+              height: 100%;
+              width: 100%;
+              border-bottom-right-radius: 15px;
+              background: rgba(52, 160, 164, 0.8);
+            }
+          }
+
+          &:nth-child(2) {
+            position: absolute;
+            bottom: -20px;
+            right: 0px;
+            height: 20px;
+            width: 10%;
+            background: #fff;
+            display: none;
+
+            &:before {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0;
+              height: 100%;
+              width: 100%;
+              background: rgba(52, 160, 164, 0.8);
+              border-top-right-radius: 15px;
+            }
+          }
+        }
+
+        .fas,
+        .far {
+          position: relative;
+          min-width: 60px;
+          height: 50px;
+          display: block;
+          line-height: 50px;
+          text-align: center;
+          font-size: 2em;
+        }
+
+        .title {
+          position: relative;
+          min-width: 60px;
+          min-height: 50px;
+          line-height: 50px;
+          display: block;
+          left: 20px;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+
+.toggle-bar {
+  z-index: 300;
+  position: fixed;
+  min-width: 50px;
+  min-height: 50px;
+  top: 80px;
+  left: 32px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+
+  &.active {
+    left: 234px;
+    transition: 0.5s;
+
+    .open {
+      display: none;
+    }
+
+    .close {
+      display: block;
+    }
+  }
+
+  i {
+    position: absolute;
+    color: #fff;
+    font-size: 25px;
+    display: none;
+
+    &.open {
+      display: block;
+    }
+
+    &.close {
+      display: none;
+    }
+  }
+}
+
+#blur.active {
+  pointer-events: none;
+  user-select: none;
+
+  &:after {
+    z-index: 1111;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    content: "";
+    width: 100%;
+  }
+}
+
+.top-nav-bar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .top-nav-bar-content {
+    height: calc(100% - 73px);
+  }
+}
+
+.content {
+  --closed-sidebar: 110px;
+  --opened-sidebar: 280px;
+  width: calc(100% - var(--closed-sidebar));
+  transition: 0.5s;
+
+  &.active {
+    width: calc(100% - var(--opened-sidebar));
+  }
+}
+
+.navigation-bar-container {
+  width: $closed-sidebar;
+  transition: 0.5s;
+
+  &.active {
+    width: $opened-sidebar;
+  }
+}

@@ -1,0 +1,34 @@
+.deviceManagerInside {
+  padding: 10px 20px;
+
+  div {
+    user-select: none;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    background: #168aad;
+    border-radius: 15px;
+    padding-left: 15px;
+
+    .device-name {
+      margin-top: 5px;
+    }
+
+    i {
+      color: #6c717b;
+      font-size: 15px;
+      cursor: pointer;
+      padding: 10px 10px;
+    }
+
+    .delete::before {
+      text-align: center;
+      color: #fff;
+    }
+
+    .delete:hover {
+      background: #ff0000;
+      border-radius: 0 15px 15px 0;
+    }
+  }
+}

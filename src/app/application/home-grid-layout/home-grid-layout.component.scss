@@ -1,0 +1,205 @@
+.widgets-container {
+  position: relative;
+  width: 99.5%;
+  height: 98.7%;
+  top: 5px;
+  right: 5px;
+  left: 3px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 5px;
+  column-gap: 5px;
+  justify-content: center;
+}
+
+.widget-1 {
+  display: grid;
+  grid-template-rows: 0.7fr 0.7fr 1fr;
+  background-color: rgba($color: #c0bfbf, $alpha: 0.2);
+  border-radius: 15px;
+  row-gap: 5px;
+
+  .welcome-widget {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+
+    .welcome {
+      --welcome-widget-width: 848px;
+      --welcome-widget-height: 235px;
+    }
+  }
+
+  .home-widget {
+    display: grid;
+    grid-template-rows: 0.25fr 0.75fr;
+    border-radius: 15px;
+    box-shadow: 1px 2px 10px 0px rgba($color: #000, $alpha: 0.2);
+    width: 848px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+
+    &-title {
+      padding-bottom: 9px;
+      padding-left: 15px;
+      padding-top: 5px;
+
+      .home-text {
+        font-size: 20px;
+        color: black;
+      }
+
+      .home-select {
+        margin-top: -25px;
+        margin-right: 10px;
+        --select-menu-widget-width: 300px;
+        --select-menu-widget-height: 45px;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
+    .sensor-1 {
+      display: flex;
+      padding-left: 15px;
+    }
+
+    .sensor-2 {
+      display: flex;
+      padding-left: 155px;
+      margin-top: -118px;
+    }
+
+    .sensor-3 {
+      display: flex;
+      padding-left: 295px;
+      margin-top: -118px;
+    }
+    .sensor-4 {
+      display: flex;
+      padding-left: 435px;
+      margin-top: -120px;
+    }
+    .sensor-5 {
+      display: flex;
+      padding-left: 575px;
+      margin-top: -120px;
+    }
+
+    .sensor-6 {
+      display: flex;
+      padding-left: 715px;
+      margin-top: -120px;
+    }
+  }
+
+  .room-temperature-widget {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+
+    .temperature {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 2px;
+      margin-top: 10px;
+      --temperature-widget-width: 848px;
+      --temperature-widget-height: 350px;
+    }
+  }
+}
+
+.widget-2 {
+  background-color: rgba($color: #c0bfbf, $alpha: 0.2);
+  display: grid;
+  grid-template-rows: 0.9fr 0.5fr 0.8fr;
+  row-gap: 5px;
+  border-radius: 15px;
+
+  .weather-widget {
+    display: grid;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+
+    .weather {
+      --weather-widget-width: 850px;
+      --weather-widget-height: 345px;
+    }
+  }
+
+  .time-widget {
+    display: grid;
+    grid-template-rows: 0.25fr 0.75fr;
+    padding: 10px;
+    padding-top: 5px;
+
+    &-title {
+      padding-bottom: 9px;
+      padding-left: 15px;
+      padding-top: 5px;
+
+      .time-text {
+        font-size: 20px;
+        color: black;
+      }
+    }
+
+    .time {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 1px;
+      --time-widget-color: #fff;
+      --time-widget-width: 850px;
+      --time-widget-height: 140px;
+    }
+  }
+
+  .graph-widget {
+    display: grid;
+    margin-right: 10px;
+
+    &-title {
+      padding-bottom: 9px;
+      padding-left: 10px;
+      padding-top: 5px;
+
+      .graph-text {
+        font-size: 20px;
+        color: black;
+      }
+
+      .graph-select {
+        position: relative;
+        margin-top: -35px;
+        padding-bottom: 10px;
+        --select-menu-widget-width: 300px;
+        --select-menu-widget-height: 45px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .graph {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        --graph-widget-width: 848px;
+        --graph-widget-height: 260px;
+      }
+    }
+  }
+}
+
+.home-select {
+  z-index: 1000;
+  position: relative;
+}
+
+.app-sensor-widget {
+  max-width: 120px;
+  max-height: 120px;
+}

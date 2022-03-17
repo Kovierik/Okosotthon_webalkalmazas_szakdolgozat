@@ -1,0 +1,26 @@
+<div class="weather-widget-container">
+  <div class="weather-container">
+    <div *ngIf="weatherInfos.isDaytime" class="weather-row">
+      <i class="fas fa-3x fa-sun sun"></i>
+    </div>
+    <div *ngIf="!weatherInfos.isDaytime" class="weather-row">
+      <i class="fas fa-3x fa-moon moon-icon"></i>
+    </div>
+    <div class="weather-row cloud-row">
+      <i class="fas fa-cloud fa-3x cloud-icon"></i>
+    </div>
+    <div class="weather-row big">{{ weatherInfos.tempInCelsius }}°</div>
+    <div class="weather-row small">
+      {{ weatherInfos.minTemp }}° / {{ weatherInfos.maxTemp }}°
+    </div>
+    <div class="weather-row small">
+      Ennyinek érződik: {{ weatherInfos.feelLikeTemp }}°
+    </div>
+    <div class="weather-row medium">
+      {{ weatherInfos.name }}
+    </div>
+    <div class="weather-row small">
+      Páratartalom: {{ weatherInfos.main.humidity }}%
+    </div>
+  </div>
+</div>

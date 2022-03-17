@@ -1,0 +1,47 @@
+<div class="backdrop" [class.active]="isOpen">
+  <div class="overlay">
+    <i class="close fas fa-times" (click)="roomDetailsService.close()"></i>
+    <form>
+      <input
+        class="room-name"
+        type="text"
+        placeholder="Szoba nevének hozzáadása..."
+        [(ngModel)]="this.room.name"
+        name="name"
+      />
+      <div class="color-details">
+        <div class="room-color">Szoba színe:</div>
+        <input
+          class="color-picker"
+          placeholder="Kérlek válassz színt..."
+          type="color"
+          [(ngModel)]="this.room.color"
+          name="color"
+        />
+        <i class="far fa-save" (click)="saveRooms()"></i>
+      </div>
+    </form>
+    <br />
+    <div class="sensor-list">
+      <div class="sensors inside">Szobában megtalálható szenzorok:</div>
+      <div class="sensors" *ngFor="let sensor of room.sensors">
+        <div class="sensor-name">{{ sensor.name }}</div>
+        <i
+          class="remove-sensor far fa-trash-alt delete"
+          (click)="removeSensor(sensor)"
+        ></i>
+      </div>
+    </div>
+    <div class="room-sensor-details">
+      <div class="room-temperature" *ngIf="room.sensors.length !== 0">
+        <div class="sensors inside">Hőmérséklet értékek szenzoronként:</div>
+        <div class="sensors" *ngFor="let sensor of roomSensors">
+          <div class="sensor-name">
+            {{ sensor.sensorId }}
+            <div class="temperature">{{ sensor.lastTemperature }}°C</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

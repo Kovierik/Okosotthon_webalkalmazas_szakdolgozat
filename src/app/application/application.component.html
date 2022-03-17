@@ -1,0 +1,75 @@
+<div class="top-nav-bar">
+  <app-app-navigation-bar
+    (openDeviceManagerCallback)="openDeviceManager()"
+  ></app-app-navigation-bar>
+  <div class="top-nav-bar-content">
+    <body id="blur">
+      <div class="home-container">
+        <div class="navigation-bar-container" #navBarContainer>
+          <div class="navigation-bar">
+            <ul #navbar>
+              <li
+                class="list"
+                (click)="activateElement($event)"
+                (click)="switchEditMode()"
+                *ngIf="sideBarButtons.enableEditMode === true"
+              >
+                <b></b>
+                <b></b>
+                <i class="far fa-edit"></i>
+                <span class="title"> Szerkesztői mód</span>
+              </li>
+              <li
+                class="list"
+                (click)="activateElement($event)"
+                (click)="switchEditMode()"
+                *ngIf="sideBarButtons.disableEditMode === true"
+              >
+                <b></b>
+                <b></b>
+                <i class="far fa-save"></i>
+                <span class="title"> Változtatások mentése</span>
+              </li>
+              <li
+                class="list"
+                (click)="activateElement($event)"
+                *ngIf="sideBarButtons.addRoom === true"
+                (click)="addRoom()"
+              >
+                <b></b>
+                <b></b>
+                <i class="fas fa-home"></i>
+                <span class="title"> Szoba hozzáadása</span>
+              </li>
+              <li
+                class="list"
+                (click)="activateElement($event)"
+                *ngIf="sideBarButtons.addSensor === true"
+                (click)="addSensor()"
+              >
+                <b></b>
+                <b></b>
+                <i class="fas fa-th-large"></i>
+                <span class="title"> Szenzor hozzáadása</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="content" #content>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+      <div class="toggle-bar" (click)="toggleMenu()">
+        <i class="fas fa-arrow-right open"></i>
+        <i class="fas fa-arrow-left close"></i>
+      </div>
+      <app-account-menu
+        (openHelpManagerCallback)="openHelpManager()"
+      ></app-account-menu>
+    </body>
+  </div>
+</div>
+<app-device-manager class="popup" id="popup"></app-device-manager>
+<app-help-menu class="popup" id="popup"></app-help-menu>
+<app-room-details-overlay></app-room-details-overlay>
+<app-sensor-picker-overlay></app-sensor-picker-overlay>

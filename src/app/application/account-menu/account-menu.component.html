@@ -1,0 +1,16 @@
+<div class="account-menu">
+  <div class="account-profile" (click)="accountToggle()">
+    <i class="fas fa-users-cog"></i>
+  </div>
+  <div class="dropdown">
+    <h2>{{ userName }}<br /><span>Felhasználó</span></h2>
+    <ul>
+      <li (click)="openHelpMenu()" (click)="accountToggle()">
+        <i class="far fa-question-circle"></i><a>Segítség</a>
+      </li>
+      <li (click)="logOut()">
+        <i class="fas fa-sign-out-alt"></i><a>Kijelentkezés</a>
+      </li>
+    </ul>
+  </div>
+</div>

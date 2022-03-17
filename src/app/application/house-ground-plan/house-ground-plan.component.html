@@ -1,0 +1,51 @@
+<div class="container">
+  <div
+    class="canvas"
+    #canvas
+    (mouseover)="mouseEnter()"
+    (mouseout)="mouseLeave()"
+    (mousemove)="mouseMoving($event)"
+    (mousedown)="startDrawing()"
+    (mouseup)="finishDraw()"
+    (click)="placeSensor($event)"
+  >
+    <canvas
+      class="grid"
+      #grid
+      width="1280"
+      height="720"
+      [class.active]="editMode"
+    ></canvas>
+    <canvas
+      #rectangle
+      width="1280"
+      height="720"
+      class="rectangle-drawer"
+    ></canvas>
+    <div class="drawer" *ngIf="isAddRoomMode"></div>
+    <div class="sensor-drawer" *ngIf="isAddSensorMode">
+      <div class="icon-container"><i class="fas fa-th-large"></i></div>
+    </div>
+    <div
+      class="room"
+      *ngFor="let room of groundPlan.rooms"
+      (click)="openRoom(room)"
+      [class.remove-pointer-events]="isAddSensorMode"
+    >
+      <i
+        class="far fa-trash-alt delete"
+        (click)="removeElement(room)"
+        *ngIf="editMode"
+      ></i>
+      <div class="room-name">{{ room.name }}</div>
+      <div class="sensor" *ngFor="let sensor of room.sensors">
+        <div class="fixed-container">
+          <div class="sensor-container">
+            <i class="fas fa-th-large"></i>
+            <p>{{ sensor.name }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

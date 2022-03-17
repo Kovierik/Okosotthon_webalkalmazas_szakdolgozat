@@ -1,0 +1,66 @@
+<div class="widgets-container">
+  <div class="widget widget-1">
+    <div class="welcome-widget">
+      <app-welcome-widget class="welcome"></app-welcome-widget>
+    </div>
+    <div class="home-widget">
+      <div class="home-widget-title">
+        <div class="home-text">{{ userName }} otthona:</div>
+        <app-select-menu-box class="home-select"></app-select-menu-box>
+      </div>
+      <div class="sensor-container">
+        <app-sensor-widget
+          widgetName="TV"
+          class="sensor-1"
+          widgetIcon="bi bi-tv"
+        ></app-sensor-widget>
+        <app-sensor-widget
+          widgetName="Lámpa"
+          class="sensor-2"
+          widgetIcon="bi bi-lightbulb"
+        ></app-sensor-widget>
+        <app-sensor-widget
+          widgetName="Klíma"
+          class="sensor-3"
+          widgetIcon="bi bi-snow"
+        ></app-sensor-widget>
+        <app-sensor-widget
+          widgetName="Zene"
+          class="sensor-4"
+          widgetIcon="bi bi-music-note-beamed"
+        ></app-sensor-widget>
+        <app-sensor-widget
+          widgetName="Kamera"
+          class="sensor-5"
+          widgetIcon="bi bi-camera-video"
+        ></app-sensor-widget>
+        <app-sensor-widget
+          widgetName="Kávé"
+          class="sensor-6"
+          widgetIcon="fas fa-coffee"
+        ></app-sensor-widget>
+      </div>
+    </div>
+    <div class="room-temperature-widget">
+      <app-graph-second-widget class="graph"></app-graph-second-widget>
+    </div>
+  </div>
+  <div class="widget widget-2">
+    <div class="weather-widget">
+      <app-weather-widget class="weather"></app-weather-widget>
+    </div>
+    <div class="time-widget">
+      <div class="time-widget-title">
+        <div class="time-text">A pontos idő:</div>
+      </div>
+      <app-time-widget class="time"></app-time-widget>
+    </div>
+    <div class="graph-widget">
+      <div class="graph-widget-title">
+        <div class="graph-text">5 mérés átlaga:</div>
+        <app-select-menu-box class="graph-select"></app-select-menu-box>
+        <app-graph-widget class="graph"></app-graph-widget>
+      </div>
+    </div>
+  </div>
+</div>

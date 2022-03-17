@@ -1,0 +1,100 @@
+.account-menu {
+  z-index: 999;
+  position: fixed;
+  top: 9px;
+  right: 40px;
+
+  .account-profile {
+    position: relative;
+    height: 60px;
+    cursor: pointer;
+    font-size: 40px;
+    color: #ffffff;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 120px;
+    right: -10px;
+    padding: 10px 20px;
+    background: #2ecc71;
+    width: 250px;
+    height: 200px;
+    box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    transition: 0.5s;
+    visibility: hidden;
+    opacity: 0;
+
+    &.active {
+      top: 80px;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -8px;
+      right: 30px;
+      width: 20px;
+      height: 20px;
+      background: #2ecc71;
+      transform: rotate(45deg);
+    }
+
+    h2 {
+      width: 100%;
+      text-align: center;
+      font-size: 25px;
+      padding: 20px 0;
+      font-weight: 500;
+      font-size: 18px;
+      color: #555;
+      line-height: 1.2em;
+
+      span {
+        color: #cecece;
+        font-weight: 500;
+        font-size: 20px;
+      }
+    }
+
+    ul {
+      li {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 10px 0;
+        border-top: 2px solid rgba(0, 0, 0, 0.2);
+
+        i {
+          color: #fff;
+          max-width: 20px;
+          margin-right: 10px;
+          opacity: 0.5;
+          transition: 0.5s;
+        }
+
+        &:hover {
+          i {
+            opacity: 1;
+          }
+          a {
+            color: #fff;
+          }
+        }
+
+        a {
+          display: inline-block;
+          cursor: pointer;
+          font-weight: 550;
+          transition: 0.5s;
+          font-size: 20px;
+          text-decoration: none;
+          color: #555;
+        }
+      }
+    }
+  }
+}

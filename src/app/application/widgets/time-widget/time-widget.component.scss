@@ -1,0 +1,45 @@
+:root {
+  --time-widget-width: ;
+  --time-widget-height: ;
+  --time-widget-color: ;
+}
+
+div.widget-pattern {
+  width: var(--time-widget-width);
+  height: var(--time-widget-height);
+  border-radius: 15px;
+  background: var(--time-widget-color);
+  box-shadow: 1px 2px 10px 0px rgba($color: #000, $alpha: 0.2);
+
+  .current-time {
+    margin-top: -3px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    margin-left: 50%;
+  }
+
+  .current-timezone {
+    margin-top: -10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    margin-left: 47%;
+  }
+
+  .current-date {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    margin-left: 43%;
+  }
+
+  .content-text {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 100;
+    color: #fff;
+    text-align: left;
+    margin-left: 42%;
+  }
+}

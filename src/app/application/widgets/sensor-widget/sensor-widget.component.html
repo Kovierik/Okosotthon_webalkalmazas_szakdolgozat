@@ -1,0 +1,10 @@
+<div class="sensor-container-widget" #container>
+  <div class="text">{{ widgetName }} <i #widgetIcon></i></div>
+  <div id="toggle" #toggle (click)="widgetToggle()">
+    <i class="indicator"></i>
+  </div>
+  <div class="toggle-status">
+    <div class="toggle-text-off">KIKAPCSOLVA</div>
+    <div class="toggle-text-on">BEKAPCSOLVA</div>
+  </div>
+</div>

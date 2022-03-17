@@ -1,0 +1,171 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+/>
+<div id="popup">
+  <div class="login-overlay">
+    <label class="close fas fa-times" (click)="toggle()"></label>
+    <label class="close-back fas fa-times" (click)="toggle()"></label>
+    <input type="checkbox" id="swapper" />
+    <div class="cover-for-imgs">
+      <div class="front-cover">
+        <img
+          class="frontImg"
+          src="../../../assets/login-overlay-imgs/front.jpg"
+          alt="frontImage"
+        />
+      </div>
+      <div class="back-cover">
+        <img
+          class="backImg"
+          src="../../../assets/login-overlay-imgs/back.jpg"
+          alt="backImage"
+        />
+      </div>
+    </div>
+    <div class="container">
+      <div class="container-contents">
+        <div class="login-content">
+          <div class="title">Belépés</div>
+          <div class="errorMsg" [class.active]="loginError !== undefined">
+            <div class="wrong-error-box">
+              <div class="wrong-error-content">
+                <p>{{ loginError }}</p>
+              </div>
+            </div>
+          </div>
+          <form
+            #loginForm="ngForm"
+            (ngSubmit)="getLoginValues(loginForm.value)"
+          >
+            <div class="input-data">
+              <div class="box">
+                <i class="fas fa-user"></i>
+                <input
+                  type="text"
+                  ngModel
+                  name="loginUsername"
+                  placeholder="Felhasználónév"
+                  required
+                />
+              </div>
+              <div class="box">
+                <i class="fas fa-lock"></i>
+                <input
+                  type="password"
+                  ngModel
+                  name="loginPassword"
+                  placeholder="Jelszó"
+                  required
+                />
+              </div>
+              <div class="button box">
+                <input type="submit" value="Belépés" />
+              </div>
+              <div class="text sign-up-text">
+                Nincs még fiókod?<label
+                  for="swapper"
+                  (click)="switchToRegister()"
+                >
+                  Regisztráció</label
+                >
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="signup-content">
+          <div class="title">Regisztráció</div>
+          <div
+            class="registerWasSuccessful"
+            [class.active]="registerWasSuccessful"
+          >
+            <div class="register-success-box">
+              <div class="register-success-content">
+                <p>A regisztráció sikeresen megtörtént.</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="registerPasswordAgainError"
+            [class.active]="registerError !== undefined"
+          >
+            <div class="register-password-again-error-box">
+              <div class="register-password-again-content">
+                <p>{{ registerError }}</p>
+              </div>
+            </div>
+          </div>
+          <form
+            #registerForm="ngForm"
+            (ngSubmit)="getRegisterValues(registerForm.value)"
+          >
+            <div class="input-data">
+              <div class="box">
+                <i class="fas fa-user"></i>
+                <input
+                  type="text"
+                  ngModel
+                  name="registerUsername"
+                  id="userName"
+                  placeholder="Felhasználónév"
+                  required
+                  (keydown)="userNameValidator()"
+                />
+                <i class="fa fa-check username-valid"></i>
+                <i class="fa fa-times username-invalid"></i>
+              </div>
+              <div class="box">
+                <i class="fas fa-envelope"></i>
+                <input
+                  type="email"
+                  ngModel
+                  name="registerEmail"
+                  id="emailName"
+                  placeholder="Email"
+                  required
+                  (keydown)="emailValidator()"
+                />
+                <i class="fa fa-check email-valid"></i>
+                <i class="fa fa-times email-invalid"></i>
+              </div>
+              <div class="box">
+                <i class="fas fa-lock"></i>
+                <input
+                  type="password"
+                  ngModel
+                  name="registerPassword"
+                  id="passwordName"
+                  placeholder="Jelszó"
+                  required
+                  (keydown)="passwordValidator()"
+                />
+                <i class="fa fa-check password-valid"></i>
+                <i class="fa fa-times password-invalid"></i>
+              </div>
+              <div class="box">
+                <i class="fas fa-lock"></i>
+                <input
+                  type="password"
+                  ngModel
+                  name="registerPasswordAgain"
+                  id="passwordAgainName"
+                  placeholder="Jelszó megerősítése"
+                  required
+                  (keydown)="passwordAgainValidator()"
+                />
+                <i class="fa fa-check password-again-valid"></i>
+                <i class="fa fa-times password-again-invalid"></i>
+              </div>
+              <div class="button box">
+                <input type="submit" value="Regisztráció" />
+              </div>
+              <div class="text sign-up-text">
+                Van már fiókod?<label for="swapper"> Belépés</label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

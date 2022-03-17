@@ -1,0 +1,32 @@
+<div class="deviceManagerOverlay" #popup>
+  <div class="deviceManager">
+    <div class="deviceManagerInside">
+      <label class="close fas fa-times" (click)="close()"></label>
+      <form class="newDeviceAdd">
+        <input
+          type="text"
+          name="newDeviceAdd"
+          placeholder="Eszköz hozzáadása..."
+          [(ngModel)]="newDeviceName"
+          (keyup.enter)="addDeviceRequest()"
+        />
+        <div [class.active]="deviceError !== undefined" class="deviceError">
+          <p>{{ deviceError }}</p>
+        </div>
+        <div class="button">
+          <a class="newDeviceAddButton">
+            <i class="fas fa-plus add" (click)="addDeviceRequest()"></i>
+          </a>
+        </div>
+      </form>
+      <ul class="deviceList">
+        <div *ngFor="let device of devices">
+          <app-device-manager-items
+            (deleteDevice)="deleteDeviceRequest(device.deviceAdress)"
+            [device]="device"
+          ></app-device-manager-items>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>

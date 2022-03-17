@@ -1,0 +1,6 @@
+<div class="deviceManagerInside">
+  <div class="deviceLi" *ngIf="device !== undefined">
+    <div class="device-name">{{ device.deviceAdress }}</div>
+    <i class="far fa-trash-alt delete" (click)="deleteItem()"></i>
+  </div>
+</div>

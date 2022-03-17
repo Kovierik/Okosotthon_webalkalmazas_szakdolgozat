@@ -1,0 +1,19 @@
+<div class="select-menu">
+  <ul class="dropdown-menu-selector" #dropdown (click)="selectMenu()">
+    <input
+      type="text"
+      value="Szoba"
+      readonly
+      class="input-menu-selector"
+      #input
+    />
+    <i class="fas fa-chevron-down"></i>
+    <ul class="options" #options>
+      <li options="Hálószoba">Hálószoba</li>
+      <li options="Nagyszoba">Nagyszoba</li>
+      <li options="Nappali">Nappali</li>
+      <li options="Konyha">Konyha</li>
+      <li options="Fürdőszoba">Fürdőszoba</li>
+    </ul>
+  </ul>
+</div>

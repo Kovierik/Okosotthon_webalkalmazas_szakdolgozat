@@ -1,0 +1,78 @@
+nav {
+  position: relative;
+  padding-top: 8px;
+  margin-top: 3px;
+  left: 5px;
+  right: 5px;
+  width: 99.5%;
+  height: 70px;
+  background: #34a0a4;
+  border-radius: 15px;
+  font-size: 0;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+
+  .main-logo {
+    font-size: 25px;
+  }
+
+  a {
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    line-height: 50px;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+
+    &:nth-child(1) {
+      width: 100px;
+    }
+
+    &:nth-child(2) {
+      width: 100px;
+      left: 100px;
+
+      &:hover ~ .animation-start {
+        width: 80px;
+        left: 210px;
+      }
+    }
+
+    &:nth-child(3) {
+      width: 100px;
+      left: 200px;
+
+      &:hover ~ .animation-start {
+        width: 140px;
+        left: 390px;
+      }
+    }
+
+    &:nth-child(4) {
+      width: 100px;
+      left: 300px;
+
+      &:hover ~ .animation-start {
+        width: 130px;
+        left: 592px;
+      }
+    }
+  }
+
+  .animation-start {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+    background: #2ecc71;
+    border-radius: 15px;
+    transition: all 0.5s ease 0s;
+  }
+
+  .start-first-animation {
+    width: 80px;
+    left: 210px;
+  }
+}

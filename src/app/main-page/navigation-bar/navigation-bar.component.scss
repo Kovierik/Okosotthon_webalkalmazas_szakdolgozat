@@ -1,0 +1,185 @@
+header {
+  z-index: 999;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a.main-logo {
+    background: rgba($color: #b7094c, $alpha: 0.9);
+    -webkit-text-fill-color: transparent;
+    font-size: 25px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-left: 15px;
+
+    i {
+      font-size: 50px;
+    }
+  }
+
+  div.navigation-items {
+    right: 70px;
+    width: 800px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    div.btn {
+      position: relative;
+      margin: 20px;
+      width: 155px;
+      height: 50px;
+      margin: 20px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 955px;
+        transform: translateX(-50%);
+        bottom: -5px;
+        height: 10px;
+        width: 30px;
+        background: #80ffdb;
+        border-radius: 15px;
+        transition: 0.5s;
+        transition-delay: 0s;
+      }
+
+      &:hover::before {
+        bottom: 0;
+        height: 50%;
+        width: 80%;
+        border-radius: 25px;
+        transition-delay: 0.5s;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 955px;
+        transform: translateX(-50%);
+        top: -5px;
+        height: 10px;
+        width: 30px;
+        background: #80ffdb;
+        border-radius: 15px;
+        transition: 0.5s;
+        transition-delay: 0s;
+        z-index: 0;
+      }
+
+      &:hover::after {
+        top: 0;
+        height: 50%;
+        width: 80%;
+        border-radius: 25px;
+        transition-delay: 0.5s;
+        z-index: 0;
+      }
+
+      &:nth-child(1)::before,
+      &:nth-child(1)::after {
+        background: #b7094c;
+        box-shadow: 0 0 5px #b7094c, 0 0 15px #b7094c, 0 0 30px #b7094c,
+          0 0 50px #b7094c;
+      }
+      &:nth-child(2)::before,
+      &:nth-child(2)::after {
+        background: #b7094c;
+        box-shadow: 0 0 5px #b7094c, 0 0 15px #b7094c, 0 0 30px #b7094c,
+          0 0 50px #b7094c;
+      }
+      &:nth-child(3)::before,
+      &:nth-child(3)::after {
+        background: #b7094c;
+        box-shadow: 0 0 5px #b7094c, 0 0 15px #b7094c, 0 0 30px #b7094c,
+          0 0 50px #b7094c;
+      }
+      &:nth-child(4)::before,
+      &:nth-child(4)::after {
+        background: #b7094c;
+        box-shadow: 0 0 5px #b7094c, 0 0 15px #b7094c, 0 0 30px #b7094c,
+          0 0 50px #b7094c;
+      }
+
+      a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+        color: #fff;
+        font-size: 1em;
+        font-weight: 500;
+        text-decoration: none;
+        margin-left: 30px;
+        transition: 0.3s ease;
+        background: rgba($color: #52b69a, $alpha: 0.3);
+        box-shadow: 0 20px 40px rgba($color: #000, $alpha: 0.2);
+        border-radius: 15px;
+        letter-spacing: 1px;
+        overflow: hidden;
+        backdrop-filter: blur(15px);
+        left: 850px;
+
+        &.btn-active {
+          color: #b7094c;
+          border: 1px solid #b7094c;
+          box-shadow: 0px 0px 0px 1px #b7094c;
+          border-radius: 5px;
+          padding: 5px;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+
+      &:hover a {
+        letter-spacing: 2px;
+
+        &::before {
+          transform: skewX(45deg) translateX(200%);
+        }
+      }
+
+      a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          to left,
+          rgba($color: #000, $alpha: 0.05),
+          transparent
+        );
+        transform: skewX(45deg) translateX(0);
+        transition: 0.5s;
+      }
+    }
+  }
+}
+
+.login {
+  cursor: pointer;
+}
+
+header#blur.active {
+  filter: blur(3px);
+  pointer-events: none;
+  user-select: none;
+}

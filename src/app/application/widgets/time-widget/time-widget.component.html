@@ -1,0 +1,6 @@
+<div class="widget-pattern">
+  <div class="content-text">A pontos idő:</div>
+  <div class="current-timezone">{{ currentTime | async | date: "ZZZZ" }}</div>
+  <div class="current-time">{{ currentTime | async | date: "HH:mm" }}</div>
+  <div class="current-date">{{ currentTime | async | date: "y. MMMM. d" }}</div>
+</div>

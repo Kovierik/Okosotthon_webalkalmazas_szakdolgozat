@@ -1,0 +1,78 @@
+:root {
+  --weather-widget-width: ;
+  --weather-widget-height: ;
+}
+
+.weather-widget-container {
+  display: block;
+  border-radius: 15px;
+  width: var(--weather-widget-width);
+  height: var(--weather-widget-height);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgb(10, 9, 44) 75%,
+    rgb(12, 15, 92) 100%
+  );
+  color: white;
+
+  .weather-row {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+
+    &.small {
+      font-size: 12px;
+    }
+
+    &.medium {
+      font-size: 25px;
+      margin-top: 10px;
+    }
+
+    &.big {
+      font-size: 32px;
+      margin-top: 5px;
+    }
+  }
+
+  .sun-icon {
+    margin-top: 80px;
+    color: yellow;
+    filter: drop-shadow(2px 2px 10px rgb(236, 236, 41));
+  }
+
+  .moon-icon {
+    margin-top: 80px;
+    color: rgb(235, 233, 233);
+    filter: drop-shadow(2px 2px 10px rgb(224, 222, 222));
+  }
+
+  .cloud-row {
+    margin-top: -40px;
+  }
+
+  .cloud-icon {
+    color: rgb(40, 145, 177);
+    filter: drop-shadow(2px 2px 6px rgb(113, 166, 182));
+    animation-name: cloudAnimation;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate-reverse;
+  }
+}
+
+@keyframes cloudAnimation {
+  from {
+    margin-left: -45px;
+  }
+  to {
+    margin-left: 75px;
+  }
+}
+
+.weather-container {
+  position: relative;
+}

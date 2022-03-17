@@ -1,0 +1,30 @@
+:root {
+  --welcome-widget-width: 500px;
+  --welcome-widget-height: 200px;
+}
+
+div.widget-pattern {
+  width: var(--welcome-widget-width);
+  height: var(--welcome-widget-height);
+  padding: 20px;
+  border-radius: 15px;
+  background-color: rgba($color: #b5e48c, $alpha: 1);
+  box-shadow: 1px 2px 10px 0px rgba($color: #000, $alpha: 0.2);
+
+  .welcome-msg {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.7);
+    padding-top: 5px;
+    font-size: 2em;
+  }
+
+  .content-text {
+    margin-top: 5px;
+    font-size: 2em;
+    font-weight: 100;
+    color: #fff;
+    text-align: left;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+}

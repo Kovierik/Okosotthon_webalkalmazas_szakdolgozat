@@ -1,0 +1,117 @@
+.deviceManagerOverlay {
+  top: 0;
+  left: 0;
+  display: none;
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1500;
+
+  &.active {
+    display: flex;
+    transition: 0.5s;
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .deviceManager {
+    width: 640px;
+    height: 800px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.6);
+
+    .deviceManagerInside {
+      padding: 10px 20px;
+
+      .deviceError {
+        display: none;
+
+        &.active {
+          display: block;
+          padding: 5px;
+          border-radius: 15px;
+          border: 2px solid #da1414;
+          background-color: rgba(218, 20, 20, 0.2);
+
+          p {
+            font-weight: 1000;
+            font-size: 15px;
+            color: rgba(218, 20, 20, 0.8);
+          }
+        }
+      }
+
+      form {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px 0 5px;
+
+        > * {
+          background: transparent;
+          border: none;
+          height: 35px;
+        }
+      }
+
+      input[type="text"] {
+        padding: 0 5px;
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: #6c717b;
+        flex-grow: 1;
+        outline: none;
+      }
+
+      .button {
+        a {
+          text-decoration: none;
+        }
+        i {
+          margin-top: 5px;
+          font-size: 20px;
+          color: #8e979c;
+        }
+      }
+
+      ul.deviceList {
+        margin-left: 0;
+        padding: 0;
+        letter-spacing: none;
+        height: 715px;
+        overflow: auto;
+        background: rgba($color: #76c893, $alpha: 0.3);
+        border-radius: 10px;
+      }
+
+      .newDeviceAddButton {
+        cursor: pointer;
+      }
+
+      .newDeviceAdd {
+        border-radius: 15px;
+        background: #76c893;
+        position: relative;
+        top: -15px;
+      }
+
+      .fa-plus::before {
+        color: #fff;
+      }
+
+      .close {
+        position: relative;
+        left: 600px;
+        top: -5px;
+        font-size: 22px;
+        cursor: pointer;
+
+        &:hover {
+          color: #ff0000;
+        }
+      }
+    }
+  }
+}

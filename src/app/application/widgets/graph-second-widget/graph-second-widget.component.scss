@@ -1,0 +1,18 @@
+div.widget-pattern {
+  display: grid;
+  padding-left: 30px;
+  width: 848px;
+  height: 360px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 1px 2px 10px 0px rgba($color: #000, $alpha: 0.2);
+
+  .second-chart {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 350px;
+    width: 650px;
+  }
+}

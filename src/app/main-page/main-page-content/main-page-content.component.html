@@ -1,0 +1,50 @@
+<section class="home-page" id="blur">
+  <div *ngIf="currentContent === 1" class="content">
+    <h1>Hivatásunkról,<br /><span>az okosotthonról.</span></h1>
+    <p>
+      Az okosotthon alatt nem egy lakást vagy házat értünk. Az okosotthon
+      magában foglalja minden technikai megoldások együttesét, amelyek egymással
+      szinkronban működve az itt élők életét kényelmesebbé teszik,
+      automatizálhatóvá. Az itt található eszközök a lakók mindennapi életét
+      könnyítik meg, egymással kétoldalú kommunikációt biztosítanak lehetőleg a
+      legkisebb energiafogyasztás megvalósítása mellett. Ezen okos eszközök
+      sokrétű feladatok ellátására alkalmasak, közös bennük, hogy egy adott
+      hálózathoz csatlakoznak legtöbbször WiFi-hez, a kommunikáció ezen
+      keresztül valósul meg, de egyes eszközök ezt Bluetooth kapcsolat
+      létesítésére is alkalmasak.
+    </p>
+    <a class="join" (click)="toggle()">Csatlakozok</a>
+  </div>
+  <div *ngIf="currentContent === 2" class="content">
+    <h1>Mit is jelent<br /><span>az okosotthon?</span></h1>
+    <p>
+      Komplex rendszernek is nevezhetjük az okosotthont, mivel az itt
+      megtalálható szenzorok segítségével az otthon és a környezet állapotát is
+      figyelik. Ilyen lehet például a szobák hőmérséklete, fényösszetétele,
+      levegőösszetétele. Ezen adatok alapján képes a beállításoknak megfelelően
+      a rendszer eldönteni, hogy mi az éppen teendő feladat: bekapcsolja-e a
+      fűtést vagy ellenkező esetben a klímaberendezést.
+    </p>
+    <a class="join" (click)="toggle()">Csatlakozok</a>
+  </div>
+  <div *ngIf="currentContent === 3" class="content">
+    <h1>Kényelem<br /><span>minden szempontból.</span></h1>
+    <p>
+      Az alkalmazott berendezéseket a felhasználó működtetheti távolról is, akár
+      okostelefon és számítógép segítségével. Különböző beállítások megadásával
+      érhetjük el a megfelelő hatást az otthonunk komfortosabbá tételéhez.
+    </p>
+    <a class="join" (click)="toggle()">Csatlakozok</a>
+  </div>
+  <div *ngIf="currentContent === 4" class="content">
+    <h1>Energiagazdálkodás,<br /><span>megtakarítás.</span></h1>
+    <p>
+      Az okosotthon sokszor a felhasználó nélkül is cselekedhet, például este
+      lehúzza a redőnyt vagy lekapcsolja a villanyt egy megadott
+      időintervallumon belül. Egyik nagyon nagy pozitívuma, hogy
+      energiatakarékos. A felhasználó az elvégzett műveletekről visszajelzést
+      kaphat, és figyelheti otthonát és annak biztonságát.
+    </p>
+    <a class="join" (click)="toggle()">Csatlakozok</a>
+  </div>
+</section>

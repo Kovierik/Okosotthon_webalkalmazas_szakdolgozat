@@ -1,0 +1,45 @@
+<div class="help-menu-overlay" #popup>
+  <div class="help-manager">
+    <div class="help-manager-inside">
+      <label class="close fas fa-times" (click)="closeHelpMenu()"></label>
+      <form>
+        <div class="help-contact-container">
+          <h1>Lépjen kapcsolatba velünk!</h1>
+          <div class="for-user-text">
+            Kedves {{ userName }}! <br />Ha bármi problémája adódott, kérem
+            töltse ki és küldje el az alábbi űrlapot. A lehető miharamabb
+            válaszolni fogunk.
+          </div>
+          <div class="help-box-container">
+            <input
+              type="text"
+              placeholder="Tárgy"
+              required
+              (keypress)="removeMessage()"
+            />
+          </div>
+          <div class="help-box-container">
+            <textarea
+              name="msg"
+              id="msg"
+              cols="30"
+              rows="10"
+              placeholder="Kérem írja le a hiba pontos okát."
+              required
+              (keypress)="removeMessage()"
+            ></textarea>
+          </div>
+          <input
+            class="reset-button"
+            type="reset"
+            value="Küldés"
+            (click)="message()"
+          />
+        </div>
+      </form>
+      <div class="message-successful" *ngIf="successfulMessage === true">
+        <p>Az üzenet elküldése sikeres volt!</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+:root {
+  --graph-widget-width: 500px;
+  --graph-widget-height: 250px;
+}
+
+div.widget-pattern {
+  width: var(--graph-widget-width);
+  height: var(--graph-widget-height);
+  padding: 30px;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 1px 2px 10px 0px rgba($color: #000, $alpha: 0.2);
+
+  .first-chart {
+    display: block;
+    height: 200px;
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
